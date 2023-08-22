@@ -8,3 +8,9 @@ class Author(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String)
+class Genre(Base):
+    __tablename__ = 'genres'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+   
