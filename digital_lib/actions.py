@@ -43,10 +43,12 @@ def create_book(title, author_id, genre_names):
             return f"Author with ID {author_id} does not exist!"
         genres = []
         for genre_name in genre_names:
-             genre = session.query(Genre).filter_by(name=genre_name).first()
-             if not genre:
+            genre = session.query(Genre).filter_by(name=genre_name).first()
+            if not genre:
                 genre = Genre(name=genre_name)
                 session.add(genre)
+                genres.append(genre)
+            genres.append(genre)
 
         
       
