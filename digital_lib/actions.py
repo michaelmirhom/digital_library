@@ -16,4 +16,6 @@ def create_author(name):
         return f"Added author: {name}"
     except SQLAlchemyError as e:
         return f"An error occurred: {str(e)}"
+    finally:
+        session.close
         
