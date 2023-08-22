@@ -59,7 +59,15 @@ def create_book(title, author_id, genre_names):
         session.close()
 def list_genres():
     session = Session()
-    genre_data = []     
+    genre_data = []  
+    try:
+        genres = session.query(Genre).all()
+        genre_data = [{"id": genre.id, "name": genre.name} for genre in genres]
+    except SQLAlchemyError as e:
+        return f"An error occurred: {str(e)}"
+    finally:
+        session.close()
+    return genre_data
 
         
       
