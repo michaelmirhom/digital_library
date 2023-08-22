@@ -25,4 +25,5 @@ class Book(Base):
     title = Column(String)
     author_id = Column(Integer, ForeignKey('authors.id'))
     author = relationship("Author", backref="books")
+    genres = relationship("Genre", secondary=book_genre_association, backref="books") 
   
