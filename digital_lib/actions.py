@@ -128,6 +128,9 @@ def delete_book(book_id):
         book = session.query(Book).filter_by(id=book_id).first()
         if not book:
             return f"Book with ID {book_id} does not exist!" 
+        session.delete(book)
+        session.commit()
+        return f"Deleted book with ID {book_id} successfully!"
   
 
         
