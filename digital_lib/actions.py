@@ -18,4 +18,7 @@ def create_author(name):
         return f"An error occurred: {str(e)}"
     finally:
         session.close()
+def list_authors():
+    session = Session()
+    authors_data = []   
         
