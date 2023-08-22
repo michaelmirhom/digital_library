@@ -44,6 +44,9 @@ def create_book(title, author_id, genre_names):
         genres = []
         for genre_name in genre_names:
              genre = session.query(Genre).filter_by(name=genre_name).first()
+             if not genre:
+                genre = Genre(name=genre_name)
+                session.add(genre)
 
         
       
