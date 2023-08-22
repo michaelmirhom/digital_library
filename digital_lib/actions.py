@@ -68,6 +68,9 @@ def list_genres():
     finally:
         session.close()
     return genre_data
+def list_books(author_id=None):
+    session = Session()
+    books_data = []
 
         
       
