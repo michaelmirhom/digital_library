@@ -99,6 +99,23 @@ def update_book(book_id, new_title=None, new_author_id=None, new_genre_names=Non
         book = session.query(Book).filter_by(id=book_id).first()
         if not book:
             return f"Book with ID {book_id} does not exist!"
+        if new_title:
+            book.title = new_title
+        if new_author_id:
+            author = session.query(Author).filter_by(id=new_author_id).first()
+            if not author:
+                return f"Author with ID {new_author_id} does not exist!"
+            book.author_id = new_author_id
+        
+        if new_genre_names:
+            genres = []
+            for genre_name in new_genre_names:
+                genre = session.query(Genre).filter_by(name=genre_name).first()
+                if not genre:
+                    genre = Genre(name=genre_name)
+                    session.add(genre)
+                genres.append(genre)
+            book.genres = genres   
 
 
         
