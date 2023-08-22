@@ -14,4 +14,6 @@ def create_author(name):
         session.commit()
         print(f"Trying to add author: {name}")
         return f"Added author: {name}"
+    except SQLAlchemyError as e:
+        return f"An error occurred: {str(e)}"
         
