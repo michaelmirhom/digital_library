@@ -53,6 +53,10 @@ def create_book(title, author_id, genre_names):
         session.add(book)
         session.commit()
         return f"Added book: {title} with genres: {', '.join(genre_names)}"    
+    except SQLAlchemyError as e:
+        return f"An error occurred: {str(e)}"
+    finally:
+        session.close()
 
         
       
