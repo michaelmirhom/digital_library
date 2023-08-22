@@ -20,5 +20,9 @@ def create_author(name):
         session.close()
 def list_authors():
     session = Session()
-    authors_data = []   
+    authors_data = []  
+    try:
+        authors = session.query(Author).all()
+        authors_data = [author.name for author in authors]
+    
         
