@@ -1,6 +1,10 @@
 from sqlalchemy import Table, Column, Integer, String, ForeignKey, create_engine
 from sqlalchemy.orm import relationship, declarative_base
 Base = declarative_base()
+book_genre_association = Table('book_genre', Base.metadata,
+                               Column('book_id', Integer, ForeignKey('books.id')),
+                               Column('genre_id', Integer, ForeignKey('genres.id'))
+                               )
 
 class Author(Base):
     __tablename__ = 'authors'
