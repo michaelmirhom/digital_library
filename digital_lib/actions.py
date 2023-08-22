@@ -35,6 +35,7 @@ def create_book(title, author_id, genre_names):
     try:
         if not title:
             return "Book title cannot be empty!"
+        existing_book = session.query(Book).filter_by(title=title)
       
     
         
