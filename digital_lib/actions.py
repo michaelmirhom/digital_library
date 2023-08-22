@@ -115,7 +115,10 @@ def update_book(book_id, new_title=None, new_author_id=None, new_genre_names=Non
                     genre = Genre(name=genre_name)
                     session.add(genre)
                 genres.append(genre)
-            book.genres = genres   
+            book.genres = genres  
+        session.commit()
+        return f"Updated book with ID {book_id} successfully!" 
+    
 
 
         
