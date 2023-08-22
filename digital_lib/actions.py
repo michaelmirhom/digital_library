@@ -42,6 +42,7 @@ def create_book(title, author_id, genre_names):
         if not author:
             return f"Author with ID {author_id} does not exist!"
         genres = []
+        for genre_name in genre_names:
         
       
     
