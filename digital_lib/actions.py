@@ -88,7 +88,11 @@ def list_books(author_id=None):
             for book in books
         ]
     except SQLAlchemyError as e:
-        return f"An error occurred: {str(e)}"     
+        return f"An error occurred: {str(e)}"  
+    finally:
+        session.close()
+
+    return books_data  
 
 
         
