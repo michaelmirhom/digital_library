@@ -57,6 +57,9 @@ def create_book(title, author_id, genre_names):
         return f"An error occurred: {str(e)}"
     finally:
         session.close()
+def list_genres():
+    session = Session()
+    genre_data = []     
 
         
       
