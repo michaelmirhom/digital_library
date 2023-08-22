@@ -93,6 +93,8 @@ def list_books(author_id=None):
         session.close()
 
     return books_data  
+def update_book(book_id, new_title=None, new_author_id=None, new_genre_names=None):
+    session = Session()
 
 
         
