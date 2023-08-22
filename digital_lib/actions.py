@@ -71,6 +71,15 @@ def list_genres():
 def list_books(author_id=None):
     session = Session()
     books_data = []
+    try:
+        if author_id is None:
+            books = session.query(Book).all()
+        else:
+            author = session.query(Author).filter_by(id=author_id).first()
+            if not author:
+                return f"Author with ID {author_id} does not exist!"
+            books = session.query(Book).filter(Book.author_id == author_id).all()
+
 
         
       
