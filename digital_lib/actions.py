@@ -29,6 +29,7 @@ def list_authors():
     finally:
         session.close()
     print(f"Listing authors: {authors_data}")
+    return authors_data
       
     
         
