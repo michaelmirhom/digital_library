@@ -140,7 +140,8 @@ def search_books(search_term):
     try:
         books = session.query(Book).filter(Book.title.contains(search_term)).all()
         results = [{"title": book.title, "author": book.author.name, "genres": [genre.name for genre in book.genres]} for book in books]
-
+    except SQLAlchemyError as e:
+        return f"An error occurred: {str(e)}"
   
 
         
