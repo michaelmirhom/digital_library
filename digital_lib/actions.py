@@ -24,5 +24,7 @@ def list_authors():
     try:
         authors = session.query(Author).all()
         authors_data = [author.name for author in authors]
+    except SQLAlchemyError as e:
+        return f"An error occurred: {str(e)}"    
     
         
