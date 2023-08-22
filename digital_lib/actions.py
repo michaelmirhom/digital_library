@@ -120,6 +120,8 @@ def update_book(book_id, new_title=None, new_author_id=None, new_genre_names=Non
         return f"Updated book with ID {book_id} successfully!" 
     except SQLAlchemyError as e:
         return f"An error occurred: {str(e)}"  
+    finally:
+        session.close()
 
 
         
