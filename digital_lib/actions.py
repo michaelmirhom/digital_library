@@ -6,4 +6,7 @@ def create_author(name):
     try:
         if not name:
             return "Author name cannot be empty!"
+        existing_author = session.query(Author).filter_by(name=name)
+        if existing_author:
+            return f"Author {name} already exists!"
         
