@@ -31,6 +31,7 @@ def list_authors():
     print(f"Listing authors: {authors_data}")
     return authors_data
 def create_book(title, author_id, genre_names):
+     session = Session()
       
     
         
