@@ -47,8 +47,12 @@ def create_book(title, author_id, genre_names):
             if not genre:
                 genre = Genre(name=genre_name)
                 session.add(genre)
-                genres.append(genre)
             genres.append(genre)
+        book = Book(title=title, author_id=author_id)
+        book.genres = genres
+        session.add(book)
+        session.commit()
+        return f"Added book: {title} with genres: {', '.join(genre_names)}"    
 
         
       
