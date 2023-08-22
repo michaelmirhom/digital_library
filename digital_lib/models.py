@@ -13,4 +13,12 @@ class Genre(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String)
-   
+
+class Book(Base):
+    __tablename__ = 'books'
+
+    id = Column(Integer, primary_key=True)
+    title = Column(String)
+    author_id = Column(Integer, ForeignKey('authors.id'))
+    author = relationship("Author", backref="books")
+  
