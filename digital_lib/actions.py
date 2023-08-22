@@ -41,6 +41,7 @@ def create_book(title, author_id, genre_names):
         author = session.query(Author).filter_by(id=author_id).first()
         if not author:
             return f"Author with ID {author_id} does not exist!"
+        genres = []
         
       
     
