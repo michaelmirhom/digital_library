@@ -9,4 +9,9 @@ def create_author(name):
         existing_author = session.query(Author).filter_by(name=name)
         if existing_author:
             return f"Author {name} already exists!"
+        author = Author(name=name)
+        session.add(author)
+        session.commit()
+        print(f"Trying to add author: {name}")
+        return f"Added author: {name}"
         
