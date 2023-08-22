@@ -135,6 +135,9 @@ def delete_book(book_id):
         return f"An error occurred: {str(e)}"
     finally:
         session.close()
+def search_books(search_term):
+    session = Session()
+       
 
   
 
