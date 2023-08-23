@@ -17,3 +17,7 @@ def author_menu():
             authors = list_authors()
             for author in authors:
                 click.echo(author) 
+        elif choice == "3":
+            break
+        else:
+            click.echo("Invalid choice, please try again.")      
