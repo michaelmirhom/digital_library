@@ -2,6 +2,7 @@ import click
 from digital_lib.actions import create_author, create_book, list_books, list_authors, update_book, delete_book, search_books
 from digital_lib.database import init_db
 def author_menu():
+     choice = click.prompt("Enter the number of your choice", type=str)
      while True:
         click.echo("======== Author Menu ========")
         click.echo("1. Add Author")
