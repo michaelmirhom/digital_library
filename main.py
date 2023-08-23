@@ -8,3 +8,7 @@ def author_menu():
         click.echo("2. List Authors")
         click.echo("3. Go Back to Main Menu")
         choice = click.prompt("Enter the number of your choice", type=str)
+        if choice == "1":
+            name = click.prompt("Enter the name of the author")
+            result = create_author(name)
+            click.echo(result)
