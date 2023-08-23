@@ -13,3 +13,7 @@ def author_menu():
             name = click.prompt("Enter the name of the author")
             result = create_author(name)
             click.echo(result)
+        elif choice == "2":
+            authors = list_authors()
+            for author in authors:
+                click.echo(author) 
