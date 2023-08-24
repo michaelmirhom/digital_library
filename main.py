@@ -56,6 +56,8 @@ def book_menu():
             books = search_books(search_term)
             for book in books:
                 click.echo(f"{book['title']} by {book['author']}. Genres: {', '.join(book['genres'])}") 
+        elif choice == "6":
+                    
           
 
 
