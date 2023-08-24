@@ -72,7 +72,9 @@ def main_menu():
     if choice == "1":
             author_menu()
     elif choice == "2":
-            book_menu()       
+            book_menu() 
+    elif choice == "3":
+            click.echo("Goodbye! Thanks for using Digital Library!")      
          
                     
           
