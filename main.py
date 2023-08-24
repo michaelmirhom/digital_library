@@ -38,7 +38,9 @@ def book_menu():
           author_id = click.prompt("Enter the ID of the author", type=int)
           genre_names = [g.strip() for g in click.prompt("Enter genre names (comma separated)", type=str).split(',')]
           result = create_book(title, author_id, genre_names)
-
+        elif choice == "2":
+            books = list_books()
+            
 
             
 
