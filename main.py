@@ -57,6 +57,7 @@ def book_menu():
             for book in books:
                 click.echo(f"{book['title']} by {book['author']}. Genres: {', '.join(book['genres'])}") 
         elif choice == "6":
+            break
 
         else:
             click.echo("Invalid choice, please try again.")    
