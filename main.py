@@ -50,7 +50,12 @@ def book_menu():
             result = update_book(book_id, new_title, new_author_id, new_genre_ids)
         elif choice == "4":
             book_id = click.prompt("Enter the ID of the book to delete", type=int)
-            result = delete_book(book_id)    
+            result = delete_book(book_id)   
+        elif choice == "5":
+            search_term = click.prompt("Enter the search term")
+            books = search_books(search_term)
+            for book in books:
+                click.echo(f"{book['title']} by {book['author']}. Genres: {', '.join(book['genres'])}") 
           
 
 
