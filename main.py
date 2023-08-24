@@ -69,6 +69,9 @@ def main_menu():
         click.echo("2. Book")
         click.echo("3. Exit")
         choice = click.prompt("Enter the number of your choice", type=str)
+    if choice == "1":
+            author_menu()
+         
                     
           
 
