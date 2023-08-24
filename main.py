@@ -33,6 +33,11 @@ def book_menu():
         click.echo("5. Search Books")
         click.echo("6. Go Back to Main Menu")  
         choice = click.prompt("Enter the number of your choice", type=str)
+        if choice == "1":
+          title = click.prompt("Enter the title of the book")
+          author_id = click.prompt("Enter the ID of the author", type=int)
+          genre_names = [g.strip() for g in click.prompt("Enter genre names (comma separated)", type=str).split(',')]
+          result = create_book(title, author_id, genre_names)
 
 
             
