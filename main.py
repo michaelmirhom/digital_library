@@ -40,7 +40,10 @@ def book_menu():
           result = create_book(title, author_id, genre_names)
         elif choice == "2":
             books = list_books()
-            
+            for book in books:
+                click.echo(f"{book['title']} by {book['author']}. Genres: {', '.join(book['genres'])})
+          
+
 
             
 
