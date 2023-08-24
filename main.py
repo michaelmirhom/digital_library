@@ -23,6 +23,15 @@ def author_menu():
             break
         else:
             click.echo("Invalid choice, please try again.")
+def book_menu():
+    while True:
+        click.echo("======== Book Menu ========")
+        click.echo("1. Add Book")
+        click.echo("2. List Books")
+        click.echo("3. Update Book")
+        click.echo("4. Delete Book")
+        click.echo("5. Search Books")
+        click.echo("6. Go Back to Main Menu")          
 
 
             
