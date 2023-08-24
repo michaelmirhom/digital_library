@@ -78,8 +78,13 @@ def main_menu():
 
     else:
             click.echo("Invalid choice, please try again.")  
+
                     
-          
+   
+if __name__ == "__main__":
+    init_db()
+    print("Database initialized!")
+    main_menu()       
 
 
             
