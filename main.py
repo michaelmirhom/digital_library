@@ -60,7 +60,14 @@ def book_menu():
             break
 
         else:
-            click.echo("Invalid choice, please try again.")    
+            click.echo("Invalid choice, please try again.")   
+@click.command()
+def main_menu():
+    while True:
+        click.echo("======== Digital Library Menu ========")
+        click.echo("1. Author")
+        click.echo("2. Book")
+        click.echo("3. Exit")
                     
           
 
