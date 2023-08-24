@@ -41,7 +41,7 @@ def book_menu():
         elif choice == "2":
             books = list_books()
             for book in books:
-                click.echo(f"{book['title']} by {book['author']}. Genres: {', '.join(book['genres'])})
+                click.echo(f"{book['title']} by {book['author']}. Genres: {', '.join(book['genres'])}")
           
 
 
