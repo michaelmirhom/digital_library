@@ -31,7 +31,8 @@ def book_menu():
         click.echo("3. Update Book")
         click.echo("4. Delete Book")
         click.echo("5. Search Books")
-        click.echo("6. Go Back to Main Menu")          
+        click.echo("6. Go Back to Main Menu")  
+        choice = click.prompt("Enter the number of your choice", type=str)
 
 
             
