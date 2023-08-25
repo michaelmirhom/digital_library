@@ -30,6 +30,13 @@ def list_authors():
         session.close()
     print(f"Listing authors: {authors_data}")
     return authors_data
+def delete_author(author_id):
+    session = Session()
+   try:
+        author = session.query(Author).filter_by(id=author_id).first()
+        if not author:
+            return f"Author with ID {author_id} does not exist!"
+
 def create_book(title, author_id, genre_names):
     session = Session()
     try:
