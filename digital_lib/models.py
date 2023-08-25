@@ -12,6 +12,7 @@ class Author(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String)
+    books = relationship("Book", backref="author", cascade="all, delete-orphan")
 class Genre(Base):
     __tablename__ = 'genres'
 
