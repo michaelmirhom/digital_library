@@ -52,7 +52,8 @@ def book_menu():
             click.echo(result)
         elif choice == "4":
             book_id = click.prompt("Enter the ID of the book to delete", type=int)
-            result = delete_book(book_id)   
+            result = delete_book(book_id)
+            click.echo(result)
         elif choice == "5":
             search_term = click.prompt("Enter the search term")
             books = search_books(search_term)
