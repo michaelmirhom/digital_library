@@ -36,6 +36,9 @@ def delete_author(author_id):
         author = session.query(Author).filter_by(id=author_id).first()
         if not author:
             return f"Author with ID {author_id} does not exist!"
+        confirmation = click.prompt(f"Are you sure you want to delete author {author.name} and all their associated books? (yes/no)", type=str).lower()
+        if confirmation != "yes":
+            return "Deletion cancelled."
 
 def create_book(title, author_id, genre_names):
     session = Session()
