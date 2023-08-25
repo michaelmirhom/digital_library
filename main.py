@@ -1,6 +1,8 @@
 import click
 from digital_lib.actions import create_author, create_book, list_books, list_authors, update_book, delete_book, search_books
 from digital_lib.database import init_db
+from digital_lib.actions import delete_author
+
 
 
 def author_menu():
@@ -21,6 +23,10 @@ def author_menu():
             for author in authors:
                 click.echo(author)
         elif choice == "3":
+            author_id = click.prompt("Enter the ID of the author to delete", type=int)
+            result = delete_author(author_id)
+            click.echo(result)
+        elif choice == "4":
             break
         else:
             click.echo("Invalid choice, please try again.")
@@ -81,6 +87,7 @@ def main_menu():
             book_menu()
         elif choice == "3":
             click.echo("Goodbye! Thanks for using Digital Library!")
+            exit() 
             break
         else:
             click.echo("Invalid choice, please try again.")          
