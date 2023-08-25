@@ -32,13 +32,24 @@ def list_authors():
     return authors_data
 def delete_author(author_id):
     session = Session()
-   try:
+    try:
         author = session.query(Author).filter_by(id=author_id).first()
         if not author:
             return f"Author with ID {author_id} does not exist!"
         confirmation = click.prompt(f"Are you sure you want to delete author {author.name} and all their associated books? (yes/no)", type=str).lower()
         if confirmation != "yes":
             return "Deletion cancelled."
+        for book in author.books:
+            session.delete(book)
+        
+        session.delete(author)
+        session.commit()
+        return f"Deleted author with ID {author_id} and all their associated books!"
+    except SQLAlchemyError as e:
+        return f"An error occurred: {str(e)}"
+    finally:
+        session.close()
+
 
 def create_book(title, author_id, genre_names):
     session = Session()
