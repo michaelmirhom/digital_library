@@ -49,6 +49,7 @@ def book_menu():
             new_author_id = click.prompt("Enter the new author ID (or hit Enter to skip)", default="")
             new_genre_ids = click.prompt("Enter the new genre IDs (comma separated, or hit Enter to skip)", default="").split(',')  
             result = update_book(book_id, new_title, new_author_id, new_genre_ids)
+            click.echo(result)
         elif choice == "4":
             book_id = click.prompt("Enter the ID of the book to delete", type=int)
             result = delete_book(book_id)   
