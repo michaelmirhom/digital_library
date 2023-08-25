@@ -74,7 +74,8 @@ def main_menu():
     elif choice == "2":
             book_menu() 
     elif choice == "3":
-            click.echo("Goodbye! Thanks for using Digital Library!")  
+           click.echo("Goodbye! Thanks for using Digital Library!")  
+            break
 
     else:
             click.echo("Invalid choice, please try again.")  
