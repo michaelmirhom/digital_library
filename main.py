@@ -82,8 +82,7 @@ def main_menu():
             click.echo("Goodbye! Thanks for using Digital Library!")
             break
         else:
-            click.echo("Invalid choice, please try again.") 
-            
+            click.echo("Invalid choice, please try again.")          
 if __name__ == "__main__":
     init_db()
     print("Database initialized!")
