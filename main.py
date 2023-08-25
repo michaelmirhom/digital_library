@@ -31,7 +31,7 @@ def book_menu():
         click.echo("3. Update Book")
         click.echo("4. Delete Book")
         click.echo("5. Search Books")
-        click.echo("6. Go Back to Main Menu")  
+        click.echo("6. Go Back to Main Menu")
         choice = click.prompt("Enter the number of your choice", type=str)
         if choice == "1":
           title = click.prompt("Enter the title of the book")
@@ -47,7 +47,7 @@ def book_menu():
             book_id = click.prompt("Enter the ID of the book to update", type=int)
             new_title = click.prompt("Enter the new title (or hit Enter to skip)", default="")
             new_author_id = click.prompt("Enter the new author ID (or hit Enter to skip)", default="")
-            new_genre_ids = click.prompt("Enter the new genre IDs (comma separated, or hit Enter to skip)", default="").split(',')  
+            new_genre_ids = click.prompt("Enter the new genre IDs (comma separated, or hit Enter to skip)", default="").split(',')
             result = update_book(book_id, new_title, new_author_id, new_genre_ids)
             click.echo(result)
         elif choice == "4":
@@ -58,12 +58,13 @@ def book_menu():
             search_term = click.prompt("Enter the search term")
             books = search_books(search_term)
             for book in books:
-                click.echo(f"{book['title']} by {book['author']}. Genres: {', '.join(book['genres'])}") 
+                click.echo(f"{book['title']} by {book['author']}. Genres: {', '.join(book['genres'])}")
         elif choice == "6":
             break
-
         else:
-            click.echo("Invalid choice, please try again.")   
+            click.echo("Invalid choice, please try again.")
+
+
 @click.command()
 def main_menu():
     while True:
@@ -83,14 +84,10 @@ def main_menu():
         else:
             click.echo("Invalid choice, please try again.") 
             
-
-                    
-   
 if __name__ == "__main__":
     init_db()
     print("Database initialized!")
-    main_menu()       
-
+    main_menu()
 
             
 
