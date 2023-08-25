@@ -104,7 +104,7 @@ def list_books(author_id=None):
         books_data = [
             {
                 "title": book.title,
-                "author": book.author.name,
+                "author":  book.author.name,
                 "genres": [genre.name for genre in book.genres]
             }
             for book in books
@@ -162,7 +162,8 @@ def search_books(search_term):
     results = []
     try:
         books = session.query(Book).filter(Book.title.contains(search_term)).all()
-        results = [{"title": book.title, "author": book.author.name, "genres": [genre.name for genre in book.genres]} for book in books]
+        results = [{"title": book.title, "author":  book.author.name, "genres": [genre.name for genre in book.genres]} for book in books]
+
     except SQLAlchemyError as e:
         return f"An error occurred: {str(e)}"
     finally:
