@@ -78,7 +78,7 @@ def list_books(author_id=None):
             author = session.query(Author).filter_by(id=author_id).first()
             if not author:
                 return f"Author with ID {author_id} does not exist!"
-            books = session.query(Book).filter(Book.author_id == author_id).all
+            books = session.query(Book).filter(Book.author_id == author_id).all()
             books_data = [
             {
                 "title": book.title,
