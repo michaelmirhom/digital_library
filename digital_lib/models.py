@@ -24,7 +24,7 @@ class Genre(Base):
 
 class Book(Base):
     __tablename__ = 'books'
-    
+    description = Column(String)
     id = Column(Integer, primary_key=True)
     title = Column(String)
     author_id = Column(Integer, ForeignKey('authors.id'))
