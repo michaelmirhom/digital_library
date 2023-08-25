@@ -9,7 +9,7 @@ def author_menu():
         click.echo("1. Add Author")
         click.echo("2. List Authors")
         click.echo("3. Delete Author")
-        click.echo("3. Go Back to Main Menu")
+        click.echo("4. Go Back to Main Menu")
         choice = click.prompt("Enter the number of your choice", type=str)
 
         if choice == "1":
